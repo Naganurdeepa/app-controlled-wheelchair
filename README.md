@@ -1,88 +1,89 @@
 # ♿ Bluetooth-Controlled Wheelchair Prototype
 
 <p align="center">
-  <img src="working-prototype.jpg" alt="Working Prototype" width="500">
+  <img src="working-prototype.jpg" alt="Bluetooth Controlled Wheelchair Prototype" width="600">
 </p>
 
 <p align="center">
-  <b>Arduino-based Bluetooth-controlled mobility prototype using Arduino Uno, HC-05 and L298N motor driver.</b>
+  <b>A Bluetooth-based mobility prototype controlled using Arduino Uno and an HC-05 Bluetooth module.</b>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white">
-  <img src="https://img.shields.io/badge/Language-C%2FC%2B%2B-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Communication-Bluetooth-orange?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Project-Embedded%20Systems-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Platform-Arduino%20Uno-blue">
+  <img src="https://img.shields.io/badge/Language-Embedded%20C-orange">
+  <img src="https://img.shields.io/badge/Bluetooth-HC--05-green">
+  <img src="https://img.shields.io/badge/Motor%20Driver-L298N-red">
+  <img src="https://img.shields.io/badge/Project-Prototype-purple">
 </p>
 
 ---
 
-## 📌 Project Overview
+## 📌 About the Project
 
-The **Bluetooth-Controlled Wheelchair Prototype** is an embedded systems project designed to demonstrate wireless movement control of a four-wheel mobility platform.
+The **Bluetooth-Controlled Wheelchair Prototype** is an embedded systems project designed to demonstrate wireless control of a four-wheel mobility platform.
 
-The system uses an **Arduino Uno** as the main controller. An **HC-05 Bluetooth module** receives commands wirelessly from the **Serial Bluetooth Terminal** application on a smartphone. The Arduino processes these commands and controls the motors through an **L298N motor driver**.
+The system uses an **Arduino Uno** as the main controller. An **HC-05 Bluetooth module** receives movement commands from a smartphone through the **Serial Bluetooth Terminal application**.
+
+The received commands are processed by the Arduino and used to control the motors through an **L298N motor driver**.
 
 The prototype supports:
 
 - ⬆️ Forward movement
 - ⬇️ Backward movement
-- ⬅️ Left turn
-- ➡️ Right turn
+- ⬅️ Left movement
+- ➡️ Right movement
 - 🛑 Stop
 
----
-
-## ✨ Features
-
-- 📱 Bluetooth-based wireless control
-- 🤖 Arduino Uno microcontroller
-- 📡 HC-05 Bluetooth communication
-- ⚙️ L298N motor driver
-- 🔋 Battery-powered operation
-- 🎮 Simple character-based control
-- ⏱️ Fixed-duration movement control
-- 🔧 Low-cost embedded system implementation
+> **Note:** The smartphone application used in this project is the **Serial Bluetooth Terminal** app. No custom mobile application was developed for this project.
 
 ---
 
-## 🧰 Components Used
+## 🎯 Project Objective
 
-| Component | Purpose |
-|---|---|
-| Arduino Uno | Main microcontroller |
-| HC-05 Bluetooth Module | Wireless communication |
-| L298N Motor Driver | Motor control |
-| DC Motors | Movement |
-| Battery | Power supply |
-| Buck Converter | Voltage regulation |
-| Serial Bluetooth Terminal | Sending control commands |
-| Chassis & Wheels | Mechanical platform |
-| Connecting Wires | Electrical connections |
+The main objective of this project is to develop a simple and low-cost wireless mobility control system using:
+
+- Arduino Uno
+- HC-05 Bluetooth module
+- L298N motor driver
+- DC geared motors
+- Battery power supply
+
+The project demonstrates the practical application of:
+
+**Bluetooth Communication → Microcontroller → Motor Driver → DC Motors**
 
 ---
 
-## ⚙️ Working Principle
-
-The system works in the following sequence:
+## ⚙️ System Architecture
 
 ```text
-Smartphone
-    │
-    │ Bluetooth
-    ▼
-HC-05 Bluetooth Module
-    │
-    │ Serial Commands
-    ▼
-Arduino Uno
-    │
-    │ Control Signals
-    ▼
-L298N Motor Driver
-    │
-    ▼
-DC Motors
-    │
-    ▼
-Wheelchair Prototype Movement
+              Smartphone
+                   │
+                   │ Bluetooth
+                   ▼
+        ┌─────────────────────┐
+        │      HC-05          │
+        │ Bluetooth Module    │
+        └──────────┬──────────┘
+                   │ Serial Communication
+                   ▼
+        ┌─────────────────────┐
+        │     Arduino UNO     │
+        │   Main Controller   │
+        └──────────┬──────────┘
+                   │
+                   │ Control Signals
+                   ▼
+        ┌─────────────────────┐
+        │      L298N          │
+        │    Motor Driver     │
+        └──────────┬──────────┘
+                   │
+             Motor Control
+                   │
+          ┌────────┴────────┐
+          ▼                 ▼
+     DC Motors         DC Motors
+
+
+
