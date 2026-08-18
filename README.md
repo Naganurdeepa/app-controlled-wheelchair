@@ -1,18 +1,18 @@
-# ♿ Bluetooth-Controlled Wheelchair Prototype
+# 🚼 Bluetooth-Controlled Wheelchair Prototype
 
 <p align="center">
-  <img src="working-prototype.jpg" alt="Working Prototype" width="500">
+  <img src="working-prototype.jpg" alt="Working Prototype" width="650">
 </p>
 
 <p align="center">
-  <b>Arduino-based Bluetooth-controlled mobility prototype using Arduino Uno, HC-05 and L298N motor driver.</b>
+  <b>Arduino-based Bluetooth-controlled mobility prototype using Arduino Uno, HC-05 Bluetooth module and L298N motor driver.</b>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Platform-Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white">
-  <img src="https://img.shields.io/badge/Language-C%2FC%2B%2B-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Communication-Bluetooth-orange?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Project-Embedded%20Systems-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Platform-Arduino%20Uno-blue">
+  <img src="https://img.shields.io/badge/Language-Embedded%20C-orange">
+  <img src="https://img.shields.io/badge/Communication-Bluetooth-9cf">
+  <img src="https://img.shields.io/badge/Project-Embedded%20Systems-success">
 </p>
 
 ---
@@ -21,14 +21,14 @@
 
 The **Bluetooth-Controlled Wheelchair Prototype** is an embedded systems project designed to demonstrate wireless movement control of a four-wheel mobility platform.
 
-The system uses an **Arduino Uno** as the main controller. An **HC-05 Bluetooth module** receives commands wirelessly from the **Serial Bluetooth Terminal** application on a smartphone. The Arduino processes these commands and controls the motors through an **L298N motor driver**.
+The system uses an **Arduino Uno** as the main controller. An **HC-05 Bluetooth module** receives commands wirelessly from a smartphone. The Arduino processes these commands and controls the motors through an **L298N motor driver**.
 
-The prototype supports:
+### 🚀 Supported Movements
 
-- ⬆️ Forward movement
-- ⬇️ Backward movement
-- ⬅️ Left turn
-- ➡️ Right turn
+- ⬆️ Forward
+- ⬇️ Backward
+- ⬅️ Left
+- ➡️ Right
 - 🛑 Stop
 
 ---
@@ -37,56 +37,66 @@ The prototype supports:
 
 - 📱 Bluetooth-based wireless control
 - 🤖 Arduino Uno microcontroller
-- 📡 HC-05 Bluetooth communication
-- ⚙️ L298N motor driver
-- 🔋 Battery-powered operation
-- 🎮 Simple character-based control
-- ⏱️ Fixed-duration movement control
-- 🔧 Low-cost embedded system implementation
+- ⚙️ L298N dual H-bridge motor driver
+- 🔋 DC motor-based mobility
+- 🎮 Smartphone command control
+- 🔄 Forward and reverse movement
+- ↩️ Left and right turning
+- 🛑 Stop control
 
 ---
 
-## 🧰 Components Used
+## 🧩 Components Used
 
 | Component | Purpose |
 |---|---|
 | Arduino Uno | Main microcontroller |
 | HC-05 Bluetooth Module | Wireless communication |
 | L298N Motor Driver | Motor control |
-| DC Motors | Movement |
+| DC Motors | Wheel movement |
 | Battery | Power supply |
-| Buck Converter | Voltage regulation |
-| Serial Bluetooth Terminal | Sending control commands |
-| Chassis & Wheels | Mechanical platform |
-| Connecting Wires | Electrical connections |
+| Wheelchair Prototype Frame | Mechanical platform |
+| Jumper Wires | Electrical connections |
 
 ---
 
-## ⚙️ Working Principle
+## 🔌 Circuit Diagram
 
-The system works in the following sequence:
+<p align="center">
+  <img src="./circuit-diagram.jpg" alt="Circuit Diagram" width="800">
+</p>
+
+### 🔗 System Connection
 
 ```text
-Smartphone
-    │
-    │ Bluetooth
-    ▼
-HC-05 Bluetooth Module
-    │
-    │ Serial Commands
-    ▼
-Arduino Uno
-    │
-    │ Control Signals
-    ▼
-L298N Motor Driver
-    │
-    ▼
-DC Motors
-    │
-    ▼
-Wheelchair Prototype Movement
-     
-
-
+        📱 Smartphone
+              │
+              │ Bluetooth
+              ▼
+        ┌─────────────┐
+        │    HC-05    │
+        │  Bluetooth  │
+        └──────┬──────┘
+               │ Serial
+               ▼
+        ┌─────────────┐
+        │ Arduino Uno │
+        │ Controller  │
+        └──────┬──────┘
+               │
+               │ Control Signals
+               ▼
+        ┌─────────────┐
+        │    L298N    │
+        │ Motor Driver│
+        └──────┬──────┘
+               │
+          ┌────┴────┐
+          ▼         ▼
+      DC Motors   DC Motors
+          │         │
+          └────┬────┘
+               ▼
+       🦽 Wheelchair
+          Movement
 
